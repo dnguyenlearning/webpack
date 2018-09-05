@@ -1,0 +1,49 @@
+{
+  "name": "knx-curator-cms",
+  "version": "1.0.0",
+  "description": "Curator Cms 2.0",
+  "main": "index.js",
+  "scripts": {
+    "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js",
+    "prod": "npm run webpack -- --env.mode production",
+    "dev": "webpack-dev-server --host 0.0.0.0 --env.mode development --hot --watch --open",
+    "prod:debug": "npm run debug --env.mode production",
+    "dev:debug": "npm run debug --env.mode development",
+    "prod:typescript": "npm run prod -- --env.presets typescript",
+    "prod:analyze": "npm run prod -- --env.presets analyze",
+    "prod:compress": "npm run prod -- --env.presets compress",
+    "prod:uglify": "npm run prod -- --env.presets uglify",
+    "build:dev": "npm run dev -- --env.presets analyze",
+    "build:prod": "npm run prod -- --env.presets analyze --env.presets compress --env.presets uglify",
+    "webpack": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "compression-webpack-plugin": "^1.1.12",
+    "concurrently": "^4.0.1",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.2",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "ts-loader": "^5.0.0",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "url-loader": "^1.1.1",
+    "webpack": "^4.17.2",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
+}
