@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import style from './index.scss';
+import App from './components/app';
 
-import Testing from './components/test'
-const Hello = () => {
-    return (
-        <div className={style.header}>
-            <Testing />
-            Hello World
-        </div>
-    )
-}
 
-ReactDom.render(<Hello /> , document.getElementById('app'))
+
+ReactDom.render(
+    <Router>
+        <App />
+    </Router>
+    , document.getElementById('app'));
