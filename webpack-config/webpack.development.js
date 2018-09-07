@@ -1,6 +1,6 @@
 module.exports = () => ({
     devtool: "source-map",
-    devServer:{
+    devServer: {
         historyApiFallback: true,
     },
     module: {
@@ -34,8 +34,5 @@ module.exports = () => ({
                 ]
             }
         ]
-    },
-    output: {
-        filename: "bundle.js"
     }
 });

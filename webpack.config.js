@@ -3,6 +3,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpackMerge = require('webpack-merge');
 const presetsConfig = require('./webpack-config/loadPresets');
 const modeConfig = env => require(`./webpack-config/webpack.${env}`)(env);
+const path = require('path');
 
 const htmlPlugin = new HtmlWebPackPlugin({
     template: "./src/index.html",
@@ -28,7 +29,8 @@ module.exports = ({mode, presets} = {mode: 'production', presets: []}) => {
             },
             output: {
                 filename: "bundle.js",
-                path: __dirname + '/dist'
+                path: path.resolve(__dirname, 'dist'),
+                publicPath: '/'
             },
             plugins: [
                 htmlPlugin,

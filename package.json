@@ -1,7 +1,7 @@
 {
-  "name": "knx-curator-cms",
+  "name": "xpo-curator-cms",
   "version": "1.0.0",
-  "description": "Curator Cms 2.0",
+  "description": "xpo curator cms",
   "main": "index.js",
   "scripts": {
     "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js",
@@ -9,16 +9,26 @@
     "dev": "webpack-dev-server --host 0.0.0.0 --env.mode development --hot --watch --open",
     "prod:debug": "npm run debug --env.mode production",
     "dev:debug": "npm run debug --env.mode development",
-    "prod:typescript": "npm run prod -- --env.presets typescript",
-    "prod:analyze": "npm run prod -- --env.presets analyze",
-    "prod:compress": "npm run prod -- --env.presets compress",
-    "prod:uglify": "npm run prod -- --env.presets uglify",
     "build:dev": "npm run dev -- --env.presets analyze",
     "build:prod": "npm run prod -- --env.presets analyze --env.presets compress --env.presets uglify",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "test": "jest --watchAll"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/knorexteam/xpo-curator-cms.git"
+  },
+  "keywords": [
+    "curator",
+    "cms",
+    "reactjs"
+  ],
+  "author": "Lam Do && Duong Nguyen",
   "license": "ISC",
+  "homepage": "https://bitbucket.org/knorexteam/xpo-curator-cms#readme",
+  "engines": {
+    "node": ">=8"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "7.1.4",
@@ -29,6 +39,7 @@
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.5.0",
     "mini-css-extract-plugin": "^0.4.2",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
@@ -43,7 +54,6 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
-    "express": "^4.16.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-router-dom": "^4.3.1",
